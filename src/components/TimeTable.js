@@ -1,6 +1,13 @@
 import React from 'react'
 import styled from 'react-emotion'
 
+// time: [
+//   from: hour minute
+//   to: hour minute
+//   after: bool
+//   agenda: String
+// ]
+
 const TimeTable = ({data}) => (
   <div>
     {data &&

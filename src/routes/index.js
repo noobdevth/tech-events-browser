@@ -5,6 +5,10 @@ import {Head} from 'react-static'
 
 import EventCard from '../components/EventCard'
 
+// background-image: url(https://noobdevth.firebaseapp.com/static/bg.159aa1b4.jpg);
+// background-attachment: fixed;
+// background-size: contain;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +18,12 @@ const Container = styled.div`
   padding: 1.5em;
   min-height: 100vh;
   height: auto;
-  background: linear-gradient(to left, rgb(28, 216, 210), rgb(147, 237, 199));
+
+  background-image: linear-gradient(
+    to left,
+    rgb(28, 216, 210),
+    rgb(147, 237, 199)
+  );
 `
 
 const Title = styled.h1`

@@ -3,6 +3,7 @@ import styled from 'react-emotion'
 
 import Tags from './Tags'
 import DateView from './Date'
+import Actions from './Actions'
 import Markdown from './Markdown'
 import TimeTable from './TimeTable'
 
@@ -29,12 +30,6 @@ const Card = styled.div`
 // end (int): year month date
 // categories [String]
 // topics [String]
-// time: [
-//   from: hour minute
-//   to: hour minute
-//   after: bool
-//   agenda: String
-// ]
 // title
 // location: title detail
 // summary
@@ -121,6 +116,7 @@ const EventCard = ({data}) => {
         <TimeTable data={time} />
         <small>ID: {id}</small>
       </Container>
+      <Actions data={links} />
     </Card>
   )
 }

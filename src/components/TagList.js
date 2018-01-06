@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'react-emotion'
+import {connect} from 'react-redux'
 
 import Tags from '../components/Tags'
+
+import {toggleTagFilter} from '../ducks/app'
 
 const concat = (x, y) => [...x, ...y]
 const unique = vec => [...new Set(vec)]
@@ -24,11 +27,18 @@ const TagsContainer = styled.div`
 const topicTags = TagFilter('topics')
 const categoryTags = TagFilter('categories')
 
-const TagList = ({data}) => (
+const TagList = ({events, ...props}) => (
   <TagsContainer>
-    <Tags data={topicTags(data)} color="#8e44ad" />
-    <Tags data={categoryTags(data)} color="#3498db" />
+    <Tags data={topicTags(events)} color="#8e44ad" {...props} />
+    <Tags data={categoryTags(events)} color="#3498db" {...props} />
   </TagsContainer>
 )
 
-export default TagList
+const mapStateToProps = state => ({
+  events: state.app.events,
+  active: state.app.tagFilters,
+})
+
+const enhance = connect(mapStateToProps, {onClick: toggleTagFilter})
+
+export default enhance(TagList)

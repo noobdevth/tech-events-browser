@@ -1,10 +1,12 @@
 import React from 'react'
-import styled from 'react-emotion'
+import styled, {css} from 'react-emotion'
+import {lighten, darken} from 'polished'
 
 const TagContainer = styled.div`
   display: flex;
 `
 
+// prettier-ignore
 const Tag = styled.span`
   padding: 0.28em 0.6em;
   margin: 0.5em 0.5em 0 0;
@@ -25,18 +27,31 @@ const Tag = styled.span`
   }
 
   &:hover {
-    background: ${props => props.color};
+    background: ${props => lighten(0.1, props.color)};
   }
 
   &:active {
-    background: #2d2d30;
+    background: ${props => props.color};
   }
+
+  ${props => props.active && css`
+    color: white;
+    background: ${props.color};
+
+    &:hover {
+      background: ${darken(0.1, props.color)};
+    }
+  `};
 `
 
-const Tags = ({color, data}) => (
+const Tags = ({color, data, active = {}, onClick = () => {}}) => (
   <TagContainer>
     {data.map(item => (
-      <Tag key={item} color={color}>
+      <Tag
+        key={item}
+        color={color}
+        active={active[item]}
+        onClick={() => onClick(item)}>
         {item}
       </Tag>
     ))}

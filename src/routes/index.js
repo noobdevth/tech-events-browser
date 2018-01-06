@@ -1,7 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import styled from 'react-emotion'
+import {createSelector} from 'reselect'
 
+import Search from '../components/Search'
 import TagList from '../components/TagList'
 import EventCard from '../components/EventCard'
 
@@ -50,14 +52,24 @@ const Landing = ({events}) => (
     <Title>
       TECH EVENTS BROWSER <small>v0.1</small>
     </Title>
-    <TagList data={events} />
+    <TagList />
+    <Search />
     <List>
       {events.map(event => <EventCard key={event.id} data={event} />)}
     </List>
   </Container>
 )
 
-const mapStateToProps = state => ({events: state.app.events})
+const filterEvents = createSelector(
+  state => state.app.events,
+  state => state.app.search,
+  (events, search) =>
+    search ? events.filter(event => event.title.indexOf(search) > -1) : events,
+)
+
+const mapStateToProps = state => ({
+  events: filterEvents(state),
+})
 
 const enhance = connect(mapStateToProps)
 

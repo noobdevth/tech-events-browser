@@ -13,6 +13,7 @@
     "axios": "^0.17.1",
     "emotion": "^8.0.12",
     "emotion-server": "^8.0.12",
+    "fuse.js": "^3.2.0",
     "polished": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.0.0",

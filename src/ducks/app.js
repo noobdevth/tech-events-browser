@@ -9,8 +9,8 @@ export const SET_EVENTS = 'SET_EVENTS'
 export const fetchEvents = Creator(FETCH_EVENTS)
 export const setEvents = Creator(SET_EVENTS)
 
-// TODO: https://thaiprogrammer-tech-events-calendar.spacet.me/calendar.json
-const endpoint = '/calendar.json'
+// prettier-ignore
+const endpoint = 'https://thaiprogrammer-tech-events-calendar.spacet.me/calendar.json'
 
 export function* fetchEventsSaga() {
   try {

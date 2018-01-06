@@ -1,6 +1,9 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import styled, {css} from 'react-emotion'
 import {lighten, darken} from 'polished'
+
+import {toggleTagFilter} from '../ducks/app'
 
 const TagContainer = styled.div`
   display: flex;
@@ -44,7 +47,7 @@ const Tag = styled.span`
   `};
 `
 
-const Tags = ({color, data, active = {}, onClick = () => {}}) => (
+const Tags = ({color, data, active, onClick}) => (
   <TagContainer>
     {data.map(item => (
       <Tag
@@ -58,4 +61,14 @@ const Tags = ({color, data, active = {}, onClick = () => {}}) => (
   </TagContainer>
 )
 
-export default Tags
+const mapStateToProps = state => ({
+  active: state.app.tagFilters,
+})
+
+const mapDispatchToProps = {
+  onClick: toggleTagFilter,
+}
+
+const enhance = connect(mapStateToProps, mapDispatchToProps)
+
+export default enhance(Tags)

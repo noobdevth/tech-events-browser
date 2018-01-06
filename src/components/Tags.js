@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'react-emotion'
 
-const TagList = styled.div`
+const TagContainer = styled.div`
   display: flex;
-  margin-top: 0.5em;
 `
 
 const Tag = styled.span`
   padding: 0.28em 0.6em;
-  margin: 0 0.5em 0 0;
+  margin: 0.5em 0.5em 0 0;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.18);
@@ -35,13 +34,13 @@ const Tag = styled.span`
 `
 
 const Tags = ({color, data}) => (
-  <TagList>
+  <TagContainer>
     {data.map(item => (
       <Tag key={item} color={color}>
         {item}
       </Tag>
     ))}
-  </TagList>
+  </TagContainer>
 )
 
 export default Tags

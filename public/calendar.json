@@ -1,0 +1,521 @@
+[
+  {
+    "id": "functional-programming-in-python-by-thaipy-jan",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 11
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 11
+    },
+    "categories": [
+      "Meetup"
+    ],
+    "topics": [
+      "Python",
+      "Functional Programming"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 18,
+          "minute": 30
+        },
+        "to": {
+          "hour": 20,
+          "minute": 30
+        },
+        "after": true,
+        "agenda": "Meetup"
+      }
+    ],
+    "title": "Functional Programming in Python and Panel on Women in Thai Tech by ThaiPy Bangkok Meetup",
+    "location": {
+      "title": "Bhiraj Tower",
+      "detail": "EmQuartier, Sukhumvit Road, Klongton Nua, Wattana, Bangkok"
+    },
+    "summary": "Meetup รายเดือนจากกลุ่ม ThaiPy - Bangkok Python Meetup สำหรับผู้ที่สนใจในภาษา Python ภายในงานจะมีการพูดคุยพบปะในบรรยากาศเป็นกันเอง เพื่อแลกเปลี่ยนความรู้และประสบการณ์ โดยหัวข้อที่จะพูดถึงจะเริ่มตั้งแต่ระดับ Beginner ไปจนถึง Advance\n\n",
+    "description": "- \"Every language needs its underscore: FP in Python\" - Alexander Schepanovski.\n- \"Panel Discussion: What it's like to a female in Thai tech\" - To help support the upcoming [Django Girls one day workshop 10 March 2018](https://djangogirls.org/bangkok/).\n- Short talks and lightning talks\n\nMonthly meetup for those using python, learning python of just py-curious. Python is one of more popular programming languages in the word and rising further, being used in fields such as web, science, big data, dev-ops and digital entertainment. We to have talks from beginners to advance and provide a friendly atmosphere to meet and network with your fellow pythonistas.",
+    "links": [
+      {
+        "detail": "Free, Snacks and Drinks provided",
+        "title": "Meetup.com",
+        "url": "https://www.meetup.com/ThaiPy-Bangkok-Python-Meetup/events/245135592/",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 34,
+      "column": 1
+    }
+  },
+  {
+    "id": "dependent-type-theory-meetup-january-2018",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 13
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 13
+    },
+    "categories": [
+      "Workshop",
+      "Meetup"
+    ],
+    "topics": [
+      "Formal verification"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 9,
+          "minute": 0
+        },
+        "to": {
+          "hour": 16,
+          "minute": 0
+        },
+        "after": false,
+        "agenda": "Lecture/Tutorial"
+      },
+      {
+        "from": {
+          "hour": 16,
+          "minute": 0
+        },
+        "to": {
+          "hour": 17,
+          "minute": 0
+        },
+        "after": true,
+        "agenda": "Meetup"
+      }
+    ],
+    "title": "Workshop on Formal Verification using Dependent Type Theory in Thai",
+    "location": {
+      "title": "Pronto Tools",
+      "detail": null
+    },
+    "summary": "ในการพัฒนาโปรแกรมบางประเภท เราต้องการความมั่นใจว่าโปรแกรมทำงาน “ถูกต้อง 100%”\nซึ่งการ “ทดสอบ” โปรแกรมเฉยๆ มันไม่พอ เราต้อง “พิสูจน์” ได้ว่าโปรแกรมทำงานถูกต้องในทุกกรณีที่เป็นไปได้\nDependent type theory เป็นวิธีนึง ซึ่งจะได้เรียนรู้กันในเวิร์คช็อปนี้\n\n",
+    "description": "In software engineering, every application requires a certain level of correctness; most of them are \"tested\" against some test suites, however, this turn out not to be sufficient for some application; this is because those test suites cannot \"guarantee\" 100% correctness. To solve such a problem, we need to \"prove\" that those applications are indeed correct. One way to formally verify it is to use dependent type theory where mathematical proof and computer program are the same things.\n\nIn this workshop, I would like to walk though dependent type theory by first, describe it as a functional programming, then how can we use this functional programming to do some logical reasoning. No background knowledge is required (apart from simple maths skill in secondary school), so everyone is welcome to attend. We will speak in Thai but every written material will be in English. There will be no registration fee, but please bring your food.",
+    "links": [
+      {
+        "detail": "Free, bring your own food.",
+        "title": "Facebook event",
+        "url": "https://www.facebook.com/events/122627418535428/",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 51,
+      "column": 1
+    }
+  },
+  {
+    "id": "docker-in-thai-meetup-january-2018",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 17
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 17
+    },
+    "categories": [
+      "Meetup"
+    ],
+    "topics": [
+      "Docker"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 18,
+          "minute": 30
+        },
+        "to": {
+          "hour": 21,
+          "minute": 0
+        },
+        "after": false,
+        "agenda": "Talk / Networking"
+      }
+    ],
+    "title": "Docker in Thai Meetup",
+    "location": {
+      "title": "GetLinks",
+      "detail": "Lake Rajada Office Complex 10th Floor"
+    },
+    "summary": "พูดคุยกันเรื่อง Docker ในงาน Docker in Thai Meetup ครั้งที่สอง คราวนี้พูดถึงเรื่องการทำ Blue/Green Deployment ด้วย Docker ([คืออะไร?](http://www.somkiat.cc/blue-green-deployment/)) และเพิ่มเติมด้วยการคอนฟิก Liveness, Readiness ใน Kubernetes\n\n",
+    "description": "- Blue/Green micro service deployment using docker by K. Supaket\n- Liveness/Readyness with Kubernetes by K. Praparn",
+    "links": [
+      {
+        "price": "Free (sold out)",
+        "title": "Event Pop",
+        "url": "https://www.eventpop.me/e/2822",
+        "type": "ticket"
+      },
+      {
+        "detail": null,
+        "title": "Facebook event",
+        "url": "https://www.facebook.com/events/504227713281643/",
+        "type": "rsvp"
+      },
+      {
+        "detail": null,
+        "title": "Docker.com",
+        "url": "https://events.docker.com/events/details/docker-bangkok-presents-docker-in-thai-meetup-january-2018",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 69,
+      "column": 1
+    }
+  },
+  {
+    "id": "kiwi-com-talks-meetup-246060093",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 22
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 22
+    },
+    "categories": [
+      "Meetup"
+    ],
+    "topics": [
+      "JavaScript"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 17,
+          "minute": 30
+        },
+        "to": {
+          "hour": 20,
+          "minute": 0
+        },
+        "after": false,
+        "agenda": null
+      }
+    ],
+    "title": "Kiwi.com talks: Let’s talk about JavaScript beyond the web",
+    "location": {
+      "title": "The Hive Thong Lor",
+      "detail": "Meet us at the rooftop garden"
+    },
+    "summary": "We are group of digital nomads from Kiwi.com travelling to Bangkok in January 2018 who would be pleased to share acquired knowledge about developing JavaScript apps with the others.\n\n",
+    "description": "JavaScript world has exceeded the limits of browser environment and it's present in backend & mobile app world as well. Come and hear what we have learned so far while using latest technologies like Next.js, GraphQL or React Native.\n\n- Next.js by Michal Sanger\n- GraphQL by Martin Zlamal\n- Building mobile app with React Native by Václav Šír",
+    "links": [
+      {
+        "detail": null,
+        "title": "Meetup.com",
+        "url": "https://www.meetup.com/Kiwi-com-talks-The-age-of-JavaScript/events/246060093/",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 85,
+      "column": 1
+    }
+  },
+  {
+    "id": "bkkhack-243386059",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 25
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 25
+    },
+    "categories": [
+      "Codefest"
+    ],
+    "topics": [
+      "Hack Night"
+    ],
+    "time": null,
+    "title": "BKK/hack Hack Night",
+    "location": {
+      "title": "Enginex",
+      "detail": null
+    },
+    "summary": "ไม่ว่าคุณอยากจะเขียนภาษาอะไร Python, Ruby, JavaScript, Scala, PHP, Prolog คุณมาได้เลย อยากทำ Arduino ก็ขนมาได้ ถ้าอยากหาทีมสำหรับทำโปรเจค open source หรือหาคนช่วยโปรเจคงานอดิเรกของคุณจัดมาเลย! จะเขียนภาษาไหน ระดับใดก็ได้ มีกฎข้อเดียวคือคุณต้องเอาเครื่องมาเอง\n\n",
+    "description": "An event for all the coding/maker community. Any language, any level. The only rule is you must bring a laptop.\n\nWe seek to foster a welcoming cross-cultural community of hackers in and around BKK. Share your knowledge and learn from others, in a relaxed but hands-on setting.\n\nThis Meetup group focuses on participatory events—hacking is doing, not listening to presentations. Bring your own hobby projects, contribute to open source together, ask questions you encounter in your work.",
+    "links": [
+      {
+        "detail": "Free",
+        "title": "Meetup.com",
+        "url": "https://www.meetup.com/bkkhack/events/243386059/",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 102,
+      "column": 1
+    }
+  },
+  {
+    "id": "jsconf-asia-2018",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 25
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 27
+    },
+    "categories": [
+      "Conference"
+    ],
+    "topics": [
+      "JavaScript"
+    ],
+    "time": null,
+    "title": "JSConf.Asia 2018",
+    "location": {
+      "title": "Singapore",
+      "detail": "Capitol Theatre; Shangri-La Rasa Sentosa Hotel"
+    },
+    "summary": "งาน JavaScript ที่ใหญ่ที่สุดในเอเชียตะวันออกเฉียงใต้\nจะได้เจอคนจาก Microsoft, Mozilla, … ด้วย\nงานนี้คนไทยไปเยอะ (30 กว่าคน) เลยใส่ไว้ในปฏิทินนี้ด้วย\n\n",
+    "description": "JSConf.Asia 2018 is a 3 day long celebration of the web technology and design. It is the sixth edition of Southeast Asia’s most influential community event from developers for developers with the aim to educate, inspire and entertain around open source and the web.",
+    "links": [
+      {
+        "title": "2018.jsconf.asia",
+        "url": "https://2018.jsconf.asia/",
+        "type": "website"
+      },
+      {
+        "price": "1090 SGD",
+        "title": "Buy tickets",
+        "url": "https://events.pouchnation.com/event/jsconfasia2018",
+        "type": "ticket"
+      },
+      {
+        "detail": null,
+        "title": "Facebook event",
+        "url": "https://www.facebook.com/events/111499759572747/",
+        "type": "rsvp"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 118,
+      "column": 1
+    }
+  },
+  {
+    "id": "insurtech-ignite-workshop",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 27
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 27
+    },
+    "categories": [
+      "Workshop"
+    ],
+    "topics": [
+      "Insurtech"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 9,
+          "minute": 30
+        },
+        "to": {
+          "hour": 18,
+          "minute": 30
+        },
+        "after": false,
+        "agenda": null
+      }
+    ],
+    "title": "Insurtech Ignite Workshop",
+    "location": {
+      "title": "CU Innovation Hub",
+      "detail": null
+    },
+    "summary": "",
+    "description": "Insurtech Ignite Workshop จัดขึ้นเพื่อผู้ที่สนใจจะมาร่วมฟัง เทคนิค แบบเจาะลึก และอัพเดตเทรนต์ด้าน Insurance Industry, Future of Business with Big Data, AI, Automation พร้อมกิจกรรม Networking ในวันที่ 27 มกราคม 2561 นี้",
+    "links": [
+      {
+        "price": null,
+        "title": "Devcamp",
+        "url": "https://dev.wi.th/event/insurtech-ignite-workshop",
+        "type": "ticket"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 134,
+      "column": 1
+    }
+  },
+  {
+    "id": "google-cloud-onboard-bangkok-2018",
+    "start": {
+      "year": 2018,
+      "month": 1,
+      "date": 30
+    },
+    "end": {
+      "year": 2018,
+      "month": 1,
+      "date": 30
+    },
+    "categories": [
+      "Workshop"
+    ],
+    "topics": [
+      "Google Cloud Platform"
+    ],
+    "time": [
+      {
+        "from": {
+          "hour": 8,
+          "minute": 30
+        },
+        "to": {
+          "hour": 17,
+          "minute": 30
+        },
+        "after": false,
+        "agenda": null
+      }
+    ],
+    "title": "Google Cloud OnBoard Bangkok 2018",
+    "location": {
+      "title": "Central World",
+      "detail": "Convention Centre A2, 22nd Floor 999/99 Rama 1 Road, Pathumwan, Bangkok 10330, Thailand"
+    },
+    "summary": "งานสัมมนา Google Cloud OnBoard นี้เป็นงานสัมมนาฟรีที่วิทยากรจาก Google จะมาแนะนำเทคโนโลยีของ Google Cloud Platform งานนี้เหมาะกับทั้ง IT Managers, Systems Engineers and Operations professionals, Developers, Solution Architects, และผู้ที่สนใจในเทคโนโลยีของ Google ทุกคน\n\n",
+    "description": "Cloud OnBoard is a free full-day instructor-led enablement and training event that will provide you with a step-by-step technical introduction to the Google Cloud Platform (GCP). Through a combination of instructor-led presentations and hands-on labs, you will learn how to get started with Google App Engine, Datastore, Storage, Container Engine, Compute Engine and Network, Big Data and Machine Learning.",
+    "links": [
+      {
+        "title": "Google Cloud",
+        "url": "https://cloudplatformonline.com/2018-onboard-bkk.html",
+        "type": "website"
+      },
+      {
+        "price": "Free",
+        "title": "Google Cloud",
+        "url": "https://cloudplatformonline.com/2018-onboard-bkk.html#register",
+        "type": "ticket"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 145,
+      "column": 1
+    }
+  },
+  {
+    "id": "insurtech-ignite-hackathon",
+    "start": {
+      "year": 2018,
+      "month": 2,
+      "date": 3
+    },
+    "end": {
+      "year": 2018,
+      "month": 2,
+      "date": 4
+    },
+    "categories": [
+      "Hackathon"
+    ],
+    "topics": [
+      "Insurtech"
+    ],
+    "time": null,
+    "title": "Insurtech Ignite Hackathon",
+    "location": {
+      "title": "CU Innovation Hub",
+      "detail": null
+    },
+    "summary": "การแข่งขันพัฒนาซอฟต์แวร์ และเทคโนโลยีที่ท้าทายที่สุดครั้งหนึ่งของประเทศไทย พร้อมโอกาสในการพัฒนาธุรกิจ และนวัตกรรมร่วมกับ บริษัทประกันภัยชั้นนำของประเทศ ชิงรางวัลกว่า 100,000 บาท ในวันที่ 3 กุมภาพันธ์ - 4 กุมภาพันธ์ 2561\n\n",
+    "description": "InsurTech Ignite Hackthon ครั้งแรกของบริษัทประกันภัยชั้นนำ  ของประเทศ ที่รวมตัวกันภายใต้ สมาคมประกันวินาศภัยไทย จัด Hackathon ให้สตาร์ทอัพและผู้ประกอบการรุ่นใหม่เข้ามามีส่วนร่วมในการพัฒนานวัตกรรมที่เกี่ยวข้องกับการประกันภัย ชิงรางวัลรวมมูลค่า 100,000 บาท พร้อมรับการบ่มเพาะเป็นระยะเวลา 2 เดือน และมีโอกาสได้พัฒนานวัตกรรมร่วมกับบริษัทประกันภัยชั้นนำของประเทศ",
+    "links": [
+      {
+        "price": null,
+        "title": "Devcamp",
+        "url": "https://dev.wi.th/event/insurtech-ignite-hackathon",
+        "type": "ticket"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 161,
+      "column": 1
+    }
+  },
+  {
+    "id": "django-girls-bangkok-march-2018",
+    "start": {
+      "year": 2018,
+      "month": 3,
+      "date": 10
+    },
+    "end": {
+      "year": 2018,
+      "month": 3,
+      "date": 10
+    },
+    "categories": [
+      "Workshop"
+    ],
+    "topics": [
+      "Django"
+    ],
+    "time": null,
+    "title": "Django Girls Bangkok",
+    "location": {
+      "title": "Bangkok",
+      "detail": "TBA"
+    },
+    "summary": "If you are a woman and want to learn how to make websites, we have good news for you: we are holding a one-day workshop for beginners!\n\n",
+    "description": "We believe the IT industry will greatly benefit from bringing more women into technology. We want to give you an opportunity to learn how to program and become one of us – women programmers!\n\nIf you are a woman, know English and have a laptop, you can apply for our event! Don't worry, you don't need to know any technical stuff – our workshop is for people who are new to programming.\n\nAs a workshop attendee you will attend a **one-day Django workshop** during which you will create your first website!",
+    "links": [
+      {
+        "title": "Django Girls Bangkok",
+        "url": "https://djangogirls.org/bangkok/",
+        "type": "website"
+      }
+    ],
+    "declared": {
+      "filename": "README.md",
+      "line": 175,
+      "column": 1
+    }
+  }
+]

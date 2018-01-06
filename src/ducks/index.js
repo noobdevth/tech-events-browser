@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga'
 // import {composeWithDevTools} from 'remote-redux-devtools'
 
 import {reducers, rootSaga} from './root'
+import {fetchEventsSaga} from './app'
 
 /* eslint no-undef: 0 */
 
@@ -17,7 +18,7 @@ export default () => {
 
   const store = createStore(
     reducers,
-    composeEnhancers(applyMiddleware(...middleware))
+    composeEnhancers(applyMiddleware(...middleware)),
   )
 
   if (module.hot) {
@@ -28,6 +29,7 @@ export default () => {
   }
 
   saga.run(rootSaga)
+  saga.run(fetchEventsSaga)
 
   return store
 }

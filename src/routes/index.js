@@ -1,6 +1,9 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import styled from 'react-emotion'
 import {Head} from 'react-static'
+
+import EventCard from '../components/EventCard'
 
 const Section = styled.section`
   display: flex;
@@ -20,20 +23,15 @@ const Title = styled.h1`
   font-size: 2.8em;
 `
 
-const Sub = styled.h2`
-  margin: 0;
-  margin-top: 1em;
-
-  color: #555;
-  font-weight: 300;
-  font-size: 1.6em;
-`
-
-const Landing = () => (
+const Landing = ({events}) => (
   <Section>
     <Title>Tech Events Browser</Title>
-    <Sub>COMING SOON</Sub>
+    {events.map(event => <EventCard key={event.id} data={event} />)}
   </Section>
 )
 
-export default Landing
+const mapStateToProps = state => ({events: state.app.events})
+
+const enhance = connect(mapStateToProps)
+
+export default enhance(Landing)

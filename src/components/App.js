@@ -1,14 +1,21 @@
 import React from 'react'
+import {Provider} from 'react-redux'
 import {Router} from 'react-static'
 import {lifecycle} from 'recompose'
 import {injectGlobal} from 'emotion'
 
+import createStore from '../ducks'
+
 import Routes from 'react-static-routes'
 
+const store = createStore()
+
 const App = () => (
-  <Router>
-    <Routes />
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <Routes />
+    </Router>
+  </Provider>
 )
 
 const enhance = lifecycle({
@@ -19,7 +26,7 @@ const enhance = lifecycle({
         font-family: Roboto, Helvetica Neue, sans-serif;
       }
     `
-  }
+  },
 })
 
 export default enhance(App)

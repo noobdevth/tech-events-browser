@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {extractCritical} from 'emotion-server'
+import OfflinePlugin from 'offline-plugin'
 
-const siteRoot = 'https://thai-tech-events.firebaseapp.com'
+export const siteRoot = 'https://thai-tech-events.firebaseapp.com'
 
 // <meta property="og:image" content={siteRoot} />
 
@@ -33,6 +34,10 @@ class Document extends Component {
 
 export default {
   siteRoot,
+  webpack: (config, args) => {
+    config.plugins.push(new OfflinePlugin())
+    return config
+  },
   getSiteProps: () => ({
     title: 'just Do It',
     siteRoot,

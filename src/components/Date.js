@@ -3,8 +3,6 @@ import styled from 'react-emotion'
 
 const DateContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
 
   margin-bottom: 0.6em;
 `

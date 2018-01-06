@@ -62,8 +62,8 @@ const Actions = ({data}) => (
         case 'ticket':
           return (
             <Link key={url} href={url}>
-              Get Ticket for {title}
-              {price && <span>: {price}</span>}
+              Get Ticket: {title}
+              {price && <span>&nbsp;- {price}</span>}
             </Link>
           )
       }

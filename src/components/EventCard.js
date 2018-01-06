@@ -18,6 +18,7 @@ const Card = styled.div`
   border-radius: 6px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 
+  width: 100%;
   margin-top: 1em;
 
   @media screen and (max-width: 800px) {
@@ -58,7 +59,7 @@ const Desc = styled.article`
   color: #666;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 0.85em;
+  font-size: 0.9em;
   white-space: pre-line;
 `
 
@@ -73,12 +74,17 @@ const Summary = styled.article`
 
 const Container = styled.div`
   padding: 1.3em;
+  @media screen and (max-width: 500px) {
+    padding: 0.9em;
+  }
 `
 
 const Box = styled.div`
   display: flex;
   align-items: center;
 `
+
+// <small>ID: {id}</small>
 
 const EventCard = ({data}) => {
   const {
@@ -100,13 +106,13 @@ const EventCard = ({data}) => {
     <Card>
       <Title>{title}</Title>
       <Container>
-        <DateView start={start} end={end} />
         <Summary>
           <Markdown source={summary} />
         </Summary>
         <Desc>
           <Markdown source={description} />
         </Desc>
+        <DateView start={start} end={end} />
         <Box>
           Categories: <Tags data={categories} />
         </Box>
@@ -114,7 +120,6 @@ const EventCard = ({data}) => {
           Topics: <Tags data={topics} />
         </Box>
         <TimeTable data={time} />
-        <small>ID: {id}</small>
       </Container>
       <Actions data={links} />
     </Card>

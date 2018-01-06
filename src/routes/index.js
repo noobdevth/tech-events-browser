@@ -18,12 +18,18 @@ const Container = styled.div`
   padding: 1.5em;
   min-height: 100vh;
   height: auto;
+  overflow: hidden;
 
   background-image: linear-gradient(
     to left,
     rgb(28, 216, 210),
     rgb(147, 237, 199)
   );
+
+  @media screen and (max-width: 500px) {
+    font-size: 13px;
+    padding: 0.8em;
+  }
 `
 
 const Title = styled.h1`

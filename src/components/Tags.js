@@ -12,9 +12,24 @@ const Tag = styled.span`
   background: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.18);
-  border: 1px solid #89ebc9;
-  color: #555;
+  border-bottom: 1px solid #89ebc9;
+  color: #666;
   font-weight: 300;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    color: white;
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover {
+    background: #555;
+  }
+
+  &:active {
+    background: #2d2d30;
+  }
 `
 
 const Tags = ({data}) => (

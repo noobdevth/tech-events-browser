@@ -1,5 +1,7 @@
 import axios from 'axios'
 import {takeEvery, call, put} from 'redux-saga/effects'
+import {createSelector} from 'reselect'
+import Fuse from 'fuse.js'
 
 import {createReducer, Creator} from './helper'
 
@@ -31,6 +33,49 @@ export function* fetchEventsSaga() {
 export function* appWatcherSaga() {
   yield takeEvery(FETCH_EVENTS, fetchEventsSaga)
 }
+
+const searchOptions = {
+  shouldSort: true,
+  keys: [
+    'id',
+    'title',
+    'summary',
+    'description',
+    'location.title',
+    'categories',
+    'topics',
+  ],
+}
+
+const getTruthyKeys = data =>
+  Object.entries(data)
+    .filter(([_, value]) => value)
+    .map(([key]) => key)
+
+export const eventsSelector = createSelector(
+  state => state.app.events,
+  state => state.app.search,
+  state => state.app.tagFilters,
+  (events, query, tagFilters) => {
+    const activeTags = getTruthyKeys(tagFilters)
+    let result = events
+
+    if (activeTags.length > 0) {
+      result = result.filter(event => {
+        const tags = [...event.topics, ...event.categories]
+
+        return activeTags.some(e => tags.includes(e))
+      })
+    }
+
+    if (query) {
+      const fuse = new Fuse(result, searchOptions)
+      result = fuse.search(query)
+    }
+
+    return result
+  },
+)
 
 const initial = {
   events: [],

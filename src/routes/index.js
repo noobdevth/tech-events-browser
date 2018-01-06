@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import styled from 'react-emotion'
-import {createSelector} from 'reselect'
 
 import Search from '../components/Search'
 import TagList from '../components/TagList'
 import EventCard from '../components/EventCard'
+
+import {eventsSelector} from '../ducks/app'
 
 const Container = styled.div`
   display: flex;
@@ -60,15 +61,8 @@ const Landing = ({events}) => (
   </Container>
 )
 
-const filterEvents = createSelector(
-  state => state.app.events,
-  state => state.app.search,
-  (events, search) =>
-    search ? events.filter(event => event.title.indexOf(search) > -1) : events,
-)
-
 const mapStateToProps = state => ({
-  events: filterEvents(state),
+  events: eventsSelector(state),
 })
 
 const enhance = connect(mapStateToProps)

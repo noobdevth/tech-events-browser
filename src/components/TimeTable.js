@@ -28,9 +28,9 @@ const Title = styled.div``
 
 const Session = ({agenda, from, to, after}) => (
   <Agenda key={agenda}>
-    {agenda && <Title>{agenda}:&nbsp;</Title>}
+    <Title>{agenda || 'Time'}:&nbsp;</Title>
     <TimeView {...from} />
-    &nbsp;-&nbsp;
+    &nbsp;~&nbsp;
     <TimeView {...to} />
     {after && '++'}
   </Agenda>

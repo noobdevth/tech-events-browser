@@ -112,9 +112,11 @@ const EventCard = ({data, favorite}) => {
     <Card>
       <Title>{title}</Title>
       <Container>
-        <Summary>
-          <Markdown source={quote(summary)} />
-        </Summary>
+        {summary && (
+          <Summary>
+            <Markdown source={quote(summary)} />
+          </Summary>
+        )}
         <Desc>
           <Markdown source={description.trim()} />
         </Desc>

@@ -1,6 +1,6 @@
 import {compose, createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-// import {composeWithDevTools} from 'remote-redux-devtools'
+import {persistStore} from 'redux-persist'
 
 import {reducers, rootSaga} from './root'
 import {fetchEventsSaga} from './app'
@@ -20,6 +20,8 @@ export default () => {
     reducers,
     composeEnhancers(applyMiddleware(...middleware)),
   )
+
+  persistStore(store)
 
   if (module.hot) {
     module.hot.accept(() => {

@@ -1,9 +1,12 @@
-import {combineReducers} from 'redux'
 import {all} from 'redux-saga/effects'
+import storage from 'redux-persist/lib/storage'
+import {persistCombineReducers} from 'redux-persist'
 
 import app, {appWatcherSaga} from './app'
 
-export const reducers = combineReducers({app})
+const config = {key: 'root', storage}
+
+export const reducers = persistCombineReducers(config, {app})
 
 export function* rootSaga() {
   yield all([appWatcherSaga()])

@@ -5,29 +5,42 @@ import {Head} from 'react-static'
 
 import EventCard from '../components/EventCard'
 
-const Section = styled.section`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  padding: 1em;
-  min-height: 95vh;
+  padding: 1.5em;
+  min-height: 100vh;
+  height: auto;
+  background: linear-gradient(to left, rgb(28, 216, 210), rgb(147, 237, 199));
 `
 
 const Title = styled.h1`
   margin: 0;
 
-  color: #555;
+  color: white;
   font-weight: 300;
-  font-size: 2.8em;
+  font-size: 1.8em;
+`
+
+const List = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  margin: 0 auto;
+  max-width: 1000px;
 `
 
 const Landing = ({events}) => (
-  <Section>
-    <Title>Tech Events Browser</Title>
-    {events.map(event => <EventCard key={event.id} data={event} />)}
-  </Section>
+  <Container>
+    <Title>TECH EVENTS BROWSER</Title>
+    <List>
+      {events.map(event => <EventCard key={event.id} data={event} />)}
+    </List>
+  </Container>
 )
 
 const mapStateToProps = state => ({events: state.app.events})

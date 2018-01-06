@@ -23,7 +23,11 @@ const enhance = lifecycle({
     injectGlobal`
       body {
         margin: 0;
-        font-family: Roboto, Helvetica Neue, sans-serif;
+        font-family: Roboto, "Helvetica Neue", "Sukhumvit Set", Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
       }
     `
   },

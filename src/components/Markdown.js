@@ -12,6 +12,11 @@ const MarkdownView = styled(Markdown)`
   p:not(:last-child) {
     margin-bottom: 1em;
   }
+
+  a {
+    color: #1abc9c;
+    text-decoration: none;
+  }
 `
 
 export default MarkdownView

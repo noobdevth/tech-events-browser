@@ -10,6 +10,8 @@ import styled from 'react-emotion'
 
 const Agenda = styled.div`
   display: flex;
+
+  margin-top: 0.5em;
 `
 
 const Time = styled.div``

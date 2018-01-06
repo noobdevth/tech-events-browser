@@ -90,7 +90,7 @@ const Box = styled.div`
 
 // <small>ID: {id}</small>
 
-const quote = text => `“ ${text.trim()} ”`
+const quote = text => `“${text.trim()}”`
 
 const EventCard = ({data, favorite}) => {
   const {
@@ -126,7 +126,7 @@ const EventCard = ({data, favorite}) => {
         <TimeTable data={time} />
         <Box>
           <Tags data={topics} color="#8e44ad" />
-          <Tags data={categories} color="#e74c3c" />
+          <Tags data={categories} color="#1abc9c" />
           <Favorite id={id} />
         </Box>
       </Container>

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import styled from 'react-emotion'
 import {Head} from 'react-static'
 
+import Tags from '../components/Tags'
 import EventCard from '../components/EventCard'
 
 // background-image: url(https://noobdevth.firebaseapp.com/static/bg.159aa1b4.jpg);
@@ -49,11 +50,22 @@ const List = styled.div`
   max-width: 1000px;
 `
 
+const concat = (x, y) => [...x, ...y]
+const unique = vec => [...new Set(vec)]
+
+const TagFilter = key => events =>
+  unique(events.map(event => event[key]).reduce(concat, []))
+
+const topicTags = TagFilter('topics')
+const categoryTags = TagFilter('categories')
+
 const Landing = ({events}) => (
   <Container>
     <Title>
       TECH EVENTS BROWSER <small>v0.1</small>
     </Title>
+    <Tags data={topicTags(events)} color="#8e44ad" />
+    <Tags data={categoryTags(events)} color="#1abc9c" />
     <List>
       {events.map(event => <EventCard key={event.id} data={event} />)}
     </List>

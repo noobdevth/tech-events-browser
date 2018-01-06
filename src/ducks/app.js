@@ -64,7 +64,7 @@ export const eventsSelector = createSelector(
       result = result.filter(event => {
         const tags = [...event.topics, ...event.categories]
 
-        return activeTags.some(e => tags.includes(e))
+        return tags.some(e => activeTags.includes(e))
       })
     }
 

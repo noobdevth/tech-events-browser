@@ -22,7 +22,7 @@ const Title = styled.h1`
 
   color: white;
   font-weight: 300;
-  font-size: 1.8em;
+  font-size: 1.38em;
 `
 
 const List = styled.div`
@@ -36,7 +36,9 @@ const List = styled.div`
 
 const Landing = ({events}) => (
   <Container>
-    <Title>TECH EVENTS BROWSER</Title>
+    <Title>
+      TECH EVENTS BROWSER <small>v0.1</small>
+    </Title>
     <List>
       {events.map(event => <EventCard key={event.id} data={event} />)}
     </List>

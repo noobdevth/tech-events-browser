@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'react-emotion'
-import ReactMarkdown from 'react-markdown'
+
+import Tags from './Tags'
+import DateView from './Date'
+import Markdown from './Markdown'
+import TimeTable from './TimeTable'
 
 const Card = styled.div`
   display: flex;
@@ -38,27 +42,9 @@ const Card = styled.div`
 // links: [detail title url type]
 // declared: filename line column
 
-const Time = ({data}) => (
-  <div>
-    {data &&
-      data.map(({agenda, from, to, after}) => (
-        <div key={agenda}>
-          {agenda && <div>[ {agenda} ]</div>}
-          <div>
-            From: {from.hour}:{from.minute}
-          </div>
-          <div>
-            To: {to.hour}:{to.minute}
-          </div>
-          <div>After: {after ? 'Yes' : 'No'}</div>
-        </div>
-      ))}
-  </div>
-)
-
 const Title = styled.h2`
   margin: 0;
-  padding: 0.8em;
+  padding: 0.48em 0.6em;
 
   border-radius: 6px 6px 0px 0px;
   background: rgba(255, 255, 255, 0.8);
@@ -72,6 +58,8 @@ const Title = styled.h2`
 `
 
 const Desc = styled.article`
+  margin-bottom: 0.8em;
+
   color: #666;
   font-weight: 300;
   line-height: 1.5em;
@@ -80,30 +68,21 @@ const Desc = styled.article`
 `
 
 const Summary = styled.article`
-  padding: 0.78em;
+  padding: 0 0.78em 0.5em 0.78em;
 
   color: #555;
+  font-weight: 400;
   line-height: 1.5em;
   font-size: 1em;
 `
 
 const Container = styled.div`
-  padding: 1em;
+  padding: 1.3em;
 `
 
-const Tags = ({data}) => <ul>{data.map(item => <li key={item}>{item}</li>)}</ul>
-
-const Markdown = styled(ReactMarkdown)`
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  blockquote,
-  p {
-    margin: 0;
-  }
+const Box = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 const EventCard = ({data}) => {
@@ -126,29 +105,20 @@ const EventCard = ({data}) => {
     <Card>
       <Title>{title}</Title>
       <Container>
+        <DateView start={start} end={end} />
         <Summary>
           <Markdown source={summary} />
         </Summary>
         <Desc>
           <Markdown source={description} />
         </Desc>
-        <div>
-          Date:{' '}
-          <span>
-            {start.date}/{start.month}/{start.year}
-          </span>{' '}
-          until{' '}
-          <span>
-            {end.date}/{end.month}/{end.year}
-          </span>
-        </div>
-        <div>
+        <Box>
           Categories: <Tags data={categories} />
-        </div>
-        <div>
+        </Box>
+        <Box>
           Topics: <Tags data={topics} />
-        </div>
-        <Time data={time} />
+        </Box>
+        <TimeTable data={time} />
         <small>ID: {id}</small>
       </Container>
     </Card>

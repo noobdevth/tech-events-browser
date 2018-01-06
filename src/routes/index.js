@@ -6,7 +6,7 @@ import Search from '../components/Search'
 import TagList from '../components/TagList'
 import EventCard from '../components/EventCard'
 
-import {eventsSelector} from '../ducks/app'
+import eventsSelector from '../ducks/events.selector'
 
 const Container = styled.div`
   display: flex;

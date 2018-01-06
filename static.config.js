@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {extractCritical} from 'emotion-server'
 
-const siteRoot = 'https://thaitechevents.firebaseapp.com'
+const siteRoot = 'https://thai-tech-events.firebaseapp.com'
 
 // <meta property="og:image" content={siteRoot} />
 

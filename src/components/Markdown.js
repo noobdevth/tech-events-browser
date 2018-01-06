@@ -14,7 +14,7 @@ const MarkdownView = styled(Markdown)`
   }
 
   a {
-    color: #1abc9c;
+    color: #3498db;
     text-decoration: none;
   }
 `

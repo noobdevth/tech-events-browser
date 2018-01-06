@@ -126,7 +126,7 @@ const EventCard = ({data, favorite}) => {
         <TimeTable data={time} />
         <Box>
           <Tags data={topics} color="#8e44ad" />
-          <Tags data={categories} color="#1abc9c" />
+          <Tags data={categories} color="#3498db" />
           <Favorite id={id} />
         </Box>
       </Container>

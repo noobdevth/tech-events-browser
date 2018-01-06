@@ -10,25 +10,25 @@ const Footer = styled.div`
 `
 
 const Action = styled.a`
-  display: flex;
-  background: white;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: none;
   border-radius: 0;
   outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 5px 0px,
-    rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
-  padding: 0.5em 0;
+  cursor: pointer;
+
   color: #555;
   font-family: Roboto;
   font-weight: 300;
   font-size: 1.08em;
+  text-align: center;
+  text-decoration: none;
+
+  width: 100%;
+  padding: 0.5em 0.8em;
+
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 5px 0px,
+    rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
   transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 
   &:hover {
@@ -55,14 +55,14 @@ const Actions = ({data}) => (
         case 'rsvp':
           return (
             <Link key={url} href={url}>
-              RSVP: {title}
+              <span>RSVP: {title}</span>
               {detail && <span>: {detail}</span>}
             </Link>
           )
         case 'ticket':
           return (
             <Link key={url} href={url}>
-              Get Ticket: {title}
+              <span>Get Ticket: {title}</span>
               {price && <span>&nbsp;- {price}</span>}
             </Link>
           )
@@ -70,7 +70,7 @@ const Actions = ({data}) => (
 
       return (
         <Link key={url} href={url}>
-          {title}
+          Website: {title}
         </Link>
       )
     })}

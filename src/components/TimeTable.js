@@ -8,22 +8,34 @@ import styled from 'react-emotion'
 //   agenda: String
 // ]
 
+const Agenda = styled.div`
+  display: flex;
+`
+
+const Time = styled.div``
+
+const time = num => (num < 10 ? '0' + num : num)
+
+const TimeView = ({hour, minute, children}) => (
+  <Time>
+    {time(hour)}:{time(minute)}
+  </Time>
+)
+
+const Title = styled.div``
+
+const Session = ({agenda, from, to, after}) => (
+  <Agenda key={agenda}>
+    {agenda && <Title>{agenda}:&nbsp;</Title>}
+    <TimeView {...from} />
+    &nbsp;-&nbsp;
+    <TimeView {...to} />
+    {after && '++'}
+  </Agenda>
+)
+
 const TimeTable = ({data}) => (
-  <div>
-    {data &&
-      data.map(({agenda, from, to, after}) => (
-        <div key={agenda}>
-          {agenda && <div>[ {agenda} ]</div>}
-          <div>
-            From: {from.hour}:{from.minute}
-          </div>
-          <div>
-            To: {to.hour}:{to.minute}
-          </div>
-          <div>After: {after ? 'Yes' : 'No'}</div>
-        </div>
-      ))}
-  </div>
+  <div>{data && data.map(data => <Session key={data.agenda} {...data} />)}</div>
 )
 
 export default TimeTable

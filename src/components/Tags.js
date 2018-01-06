@@ -3,19 +3,21 @@ import styled from 'react-emotion'
 
 const TagList = styled.div`
   display: flex;
+  margin-top: 0.5em;
 `
 
 const Tag = styled.span`
   padding: 0.28em 0.6em;
-  margin: 0.2em;
-  margin-left: 0.5em;
+  margin: 0 0.5em 0 0;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.18);
-  border-bottom: 1px solid #89ebc9;
-  color: #666;
+  border-bottom: 1px solid ${props => props.color || '#555'};
+  color: ${props => props.color || '#555'};
   font-weight: 300;
   cursor: pointer;
+
+  text-transform: capitalize;
 
   &:hover,
   &:active {
@@ -24,7 +26,7 @@ const Tag = styled.span`
   }
 
   &:hover {
-    background: #555;
+    background: ${props => props.color};
   }
 
   &:active {
@@ -32,8 +34,14 @@ const Tag = styled.span`
   }
 `
 
-const Tags = ({data}) => (
-  <TagList>{data.map(item => <Tag key={item}>{item}</Tag>)}</TagList>
+const Tags = ({color, data}) => (
+  <TagList>
+    {data.map(item => (
+      <Tag key={item} color={color}>
+        {item}
+      </Tag>
+    ))}
+  </TagList>
 )
 
 export default Tags

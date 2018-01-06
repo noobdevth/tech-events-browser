@@ -5,6 +5,7 @@ import Tags from './Tags'
 import DateView from './Date'
 import Actions from './Actions'
 import Markdown from './Markdown'
+import Favorite from './Favorite'
 import TimeTable from './TimeTable'
 
 const Card = styled.div`
@@ -40,7 +41,7 @@ const Card = styled.div`
 
 const Title = styled.h2`
   margin: 0;
-  padding: 0.48em 0.6em;
+  padding: 0.28em 0.6em;
 
   border-radius: 6px 6px 0px 0px;
   background: rgba(255, 255, 255, 0.8);
@@ -48,9 +49,20 @@ const Title = styled.h2`
 
   color: #555;
   font-weight: 300;
-  font-size: 1.4em;
-  line-height: 1.55em;
+  font-size: 1.3em;
+  line-height: 1.45em;
   text-align: center;
+`
+
+const Summary = styled.article`
+  padding: 0 0.78em 0.5em 0.78em;
+
+  color: #555;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-size: 1em;
+
+  word-wrap: break-word;
 `
 
 const Desc = styled.article`
@@ -61,15 +73,7 @@ const Desc = styled.article`
   line-height: 1.5em;
   font-size: 0.9em;
   white-space: pre-line;
-`
-
-const Summary = styled.article`
-  padding: 0 0.78em 0.5em 0.78em;
-
-  color: #555;
-  font-weight: 400;
-  line-height: 1.5em;
-  font-size: 1em;
+  word-wrap: break-word;
 `
 
 const Container = styled.div`
@@ -86,7 +90,9 @@ const Box = styled.div`
 
 // <small>ID: {id}</small>
 
-const EventCard = ({data}) => {
+const quote = text => `“ ${text.trim()} ”`
+
+const EventCard = ({data, favorite}) => {
   const {
     id,
     start,
@@ -107,19 +113,22 @@ const EventCard = ({data}) => {
       <Title>{title}</Title>
       <Container>
         <Summary>
-          <Markdown source={summary} />
+          <Markdown source={quote(summary)} />
         </Summary>
         <Desc>
-          <Markdown source={description} />
+          <Markdown source={description.trim()} />
         </Desc>
         <DateView start={start} end={end} />
-        <Box>
-          Categories: <Tags data={categories} />
-        </Box>
-        <Box>
-          Topics: <Tags data={topics} />
-        </Box>
+        <span>
+          Location: {location.title}{' '}
+          {location.detail && <span>({location.detail})</span>}
+        </span>
         <TimeTable data={time} />
+        <Box>
+          <Tags data={topics} color="#8e44ad" />
+          <Tags data={categories} color="#e74c3c" />
+          <Favorite id={id} />
+        </Box>
       </Container>
       <Actions data={links} />
     </Card>

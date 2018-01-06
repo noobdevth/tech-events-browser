@@ -10,12 +10,14 @@ export const SET_EVENTS = 'SET_EVENTS'
 export const SET_SEARCH = 'SET_SEARCH'
 export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE'
 export const TOGGLE_TAG_FILTER = 'TOGGLE_TAG_FILTER'
+export const TOGGLE_FAVORITE_FILTER = 'TOGGLE_FAVORITE_FILTER'
 
 export const fetchEvents = Creator(FETCH_EVENTS)
 export const setEvents = Creator(SET_EVENTS)
 export const setSearch = Creator(SET_SEARCH)
 export const toggleFavorite = Creator(TOGGLE_FAVORITE)
 export const toggleTagFilter = Creator(TOGGLE_TAG_FILTER)
+export const toggleFavoriteFilter = Creator(TOGGLE_FAVORITE_FILTER)
 
 // prettier-ignore
 const endpoint = 'https://thaiprogrammer-tech-events-calendar.spacet.me/calendar.json'
@@ -56,7 +58,9 @@ export const eventsSelector = createSelector(
   state => state.app.events,
   state => state.app.search,
   state => state.app.tagFilters,
-  (events, query, tagFilters) => {
+  state => state.app.filterFavorites,
+  state => state.app.favorites,
+  (events, query, tagFilters, isFavOnly, favs) => {
     const activeTags = getTruthyKeys(tagFilters)
     let result = events
 
@@ -73,6 +77,10 @@ export const eventsSelector = createSelector(
       result = fuse.search(query)
     }
 
+    if (isFavOnly) {
+      result = result.filter(item => favs[item.id])
+    }
+
     return result
   },
 )
@@ -81,12 +89,17 @@ const initial = {
   events: [],
   favorites: {},
   tagFilters: {},
+  filterFavorites: false,
   search: '',
 }
 
 export default createReducer(initial, state => ({
   [SET_EVENTS]: events => ({...state, events}),
   [SET_SEARCH]: search => ({...state, search}),
+  [TOGGLE_FAVORITE_FILTER]: () => ({
+    ...state,
+    filterFavorites: !state.filterFavorites,
+  }),
   [TOGGLE_TAG_FILTER]: tag => ({
     ...state,
     tagFilters: {

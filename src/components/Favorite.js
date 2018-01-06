@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import {toggleFavorite} from '../ducks/app'
 
-const Fav = styled.button`
+export const Fav = styled.button`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: none;
   border-radius: 0;

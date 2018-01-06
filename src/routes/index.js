@@ -51,7 +51,7 @@ const List = styled.div`
 const Landing = ({events}) => (
   <Container>
     <Title>
-      TECH EVENTS BROWSER <small>v0.1</small>
+      TECH EVENTS BROWSER <small>v0.2</small>
     </Title>
     <TagList />
     <Search />

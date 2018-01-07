@@ -20,14 +20,14 @@ const getTruthyKeys = data =>
     .map(([key]) => key)
 
 function filterByTags(events, tagFilters) {
-  const activeTags = getTruthyKeys(tagFilters)
+  const selectedTags = getTruthyKeys(tagFilters)
 
-  if (activeTags.length > 0) {
+  if (selectedTags.length > 0) {
     return events.filter(event => {
-      const tags = [...event.topics, ...event.categories]
+      const eventTags = [...event.topics, ...event.categories]
 
       // FIXME: More tags should make it more specific, not less.
-      return activeTags.every(tag => tags.includes(tag))
+      return selectedTags.every(tag => eventTags.includes(tag))
     })
   }
 

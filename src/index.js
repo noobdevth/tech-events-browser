@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
-import Offline from 'offline-plugin/runtime'
 
 import App from './components/App'
 
 import analytics from './core/analytics'
 
 if (typeof document !== 'undefined') {
-  Offline.install()
   analytics()
+  require('offline-plugin/runtime').install()
 
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate
   const render = Comp => {

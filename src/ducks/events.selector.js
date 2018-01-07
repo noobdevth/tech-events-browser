@@ -27,7 +27,7 @@ function filterByTags(events, tagFilters) {
       const tags = [...event.topics, ...event.categories]
 
       // FIXME: More tags should make it more specific, not less.
-      return tags.some(e => activeTags.includes(e))
+      return activeTags.every(tag => tags.includes(tag))
     })
   }
 

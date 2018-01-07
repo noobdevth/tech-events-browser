@@ -121,10 +121,13 @@ const EventCard = ({data, favorite}) => {
           <Markdown source={description.trim()} />
         </Desc>
         <DateView start={start} end={end} />
-        <span>
-          Location: {location.title}{' '}
-          {location.detail && <span>({location.detail})</span>}
-        </span>
+        <Box>
+          Location:&nbsp;
+          <Markdown source={location.title} />
+          {location.detail && (
+            <Markdown source={`&nbsp;(${location.detail})`} />
+          )}
+        </Box>
         <TimeTable data={time} />
         <Box>
           <Tags data={topics} color="#8e44ad" />

@@ -5,6 +5,7 @@ import Tags from './Tags'
 import DateView from './Date'
 import Actions from './Actions'
 import Markdown from './Markdown'
+import Location from './Location'
 import Favorite from './Favorite'
 import TimeTable from './TimeTable'
 
@@ -83,7 +84,7 @@ const Container = styled.div`
   }
 `
 
-const Box = styled.div`
+const Inline = styled.div`
   display: flex;
   align-items: center;
 `
@@ -121,19 +122,13 @@ const EventCard = ({data, favorite}) => {
           <Markdown source={description.trim()} />
         </Desc>
         <DateView start={start} end={end} />
-        <Box>
-          Location:&nbsp;
-          <Markdown source={location.title} />
-          {location.detail && (
-            <Markdown source={`&nbsp;(${location.detail})`} />
-          )}
-        </Box>
+        <Location data={location} />
         <TimeTable data={time} />
-        <Box>
+        <Inline>
           <Tags data={topics} color="#8e44ad" />
           <Tags data={categories} color="#3498db" />
           <Favorite id={id} />
-        </Box>
+        </Inline>
       </Container>
       <Actions data={links} />
     </Card>

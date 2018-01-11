@@ -93,7 +93,7 @@ const Inline = styled.div`
 
 const quote = text => `“${text.trim()}”`
 
-const EventCard = ({data, favorite}) => {
+const EventView = ({data, favorite}) => {
   const {
     id,
     start,
@@ -118,16 +118,20 @@ const EventCard = ({data, favorite}) => {
             <Markdown source={quote(summary)} />
           </Summary>
         )}
+        <Desc>
+          <Markdown source={description.trim()} />
+        </Desc>
         <DateView start={start} end={end} />
         <Location data={location} />
         <TimeTable data={time} />
         <Inline>
           <Tags data={topics} color="#8e44ad" />
           <Tags data={categories} color="#3498db" />
+          <Favorite id={id} />
         </Inline>
       </Container>
     </Card>
   )
 }
 
-export default EventCard
+export default EventView

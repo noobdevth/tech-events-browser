@@ -8,6 +8,11 @@ import EventCard from '../components/EventCard'
 
 import eventsSelector from '../ducks/events.selector'
 
+const Backdrop = styled.div`
+  background: #fbfcff;
+  min-height: 100vh;
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,15 +20,8 @@ const Container = styled.div`
   justify-content: center;
 
   padding: 1.5em;
-  min-height: 100vh;
   height: auto;
   overflow: hidden;
-
-  background-image: linear-gradient(
-    to left,
-    rgb(28, 216, 210),
-    rgb(147, 237, 199)
-  );
 
   @media screen and (max-width: 500px) {
     font-size: 13px;
@@ -49,16 +47,13 @@ const List = styled.div`
 `
 
 const Landing = ({events}) => (
-  <Container>
-    <Title>
-      TECH EVENTS BROWSER <small>v0.2</small>
-    </Title>
-    <TagList />
-    <Search />
-    <List>
-      {events.map(event => <EventCard key={event.id} data={event} />)}
-    </List>
-  </Container>
+  <Backdrop>
+    <Container>
+      <List>
+        {events.map(event => <EventCard key={event.id} data={event} />)}
+      </List>
+    </Container>
+  </Backdrop>
 )
 
 const mapStateToProps = state => ({

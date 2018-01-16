@@ -16,7 +16,16 @@ const Title = styled.h2`
   text-align: center;
 `
 
-// <small>ID: {id}</small>
+const Desc = styled.article`
+  margin-bottom: 0.8em;
+
+  color: #666;
+  font-weight: 300;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  white-space: pre-line;
+  word-wrap: break-word;
+`
 
 const EventView = ({data}) =>
   data ? (

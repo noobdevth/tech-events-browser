@@ -48,22 +48,11 @@ const Title = styled.h2`
 const Summary = styled.article`
   padding: 0 0.78em 0.5em 0.78em;
 
-  color: #555;
-  font-weight: 400;
-  line-height: 1.5em;
-  font-size: 1em;
-
-  word-wrap: break-word;
-`
-
-const Desc = styled.article`
-  margin-bottom: 0.8em;
-
   color: #666;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 0.9em;
-  white-space: pre-line;
+  font-size: 1em;
+
   word-wrap: break-word;
 `
 
@@ -103,11 +92,9 @@ const EventCard = ({data, favorite}) => {
         <Title>{title}</Title>
       </CardLink>
       <Container>
-        {summary && (
-          <Summary>
-            <Markdown source={quote(truncate(summary, 160))} />
-          </Summary>
-        )}
+        <Summary>
+          <Markdown source={quote(truncate(summary || description, 180))} />
+        </Summary>
         <DateView start={start} end={end} />
         <Location data={location} />
         <Inline>

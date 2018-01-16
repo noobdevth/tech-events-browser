@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'react-emotion'
+import {connect} from 'react-redux'
 
-import Tags from './Tags'
-import DateView from './Date'
-import Actions from './Actions'
-import Markdown from './Markdown'
-import Location from './Location'
-import Favorite from './Favorite'
-import TimeTable from './TimeTable'
+import Tags from '../components/Tags'
+import DateView from '../components/Date'
+import Actions from '../components/Actions'
+import Markdown from '../components/Markdown'
+import Location from '../components/Location'
+import Favorite from '../components/Favorite'
+import TimeTable from '../components/TimeTable'
 
 const Card = styled.div`
   display: flex;
@@ -91,47 +92,12 @@ const Inline = styled.div`
 
 // <small>ID: {id}</small>
 
-const quote = text => `“${text.trim()}”`
+const EventView = props => <Card>{JSON.stringify(props)}</Card>
 
-const EventView = ({data, favorite}) => {
-  const {
-    id,
-    start,
-    end,
-    categories,
-    topics,
-    time,
-    title,
-    location,
-    summary,
-    description,
-    links,
-    declared,
-  } = data
+const mapStateToProps = state => ({
+  // events: state.app.events,
+})
 
-  return (
-    <Card>
-      <Title>{title}</Title>
-      <Container>
-        {summary && (
-          <Summary>
-            <Markdown source={quote(summary)} />
-          </Summary>
-        )}
-        <Desc>
-          <Markdown source={description.trim()} />
-        </Desc>
-        <DateView start={start} end={end} />
-        <Location data={location} />
-        <TimeTable data={time} />
-        <Inline>
-          <Tags data={topics} color="#8e44ad" />
-          <Tags data={categories} color="#3498db" />
-          <Favorite id={id} />
-        </Inline>
-      </Container>
-    </Card>
-  )
-}
+const enhance = connect(mapStateToProps)
 
-export default EventView
+export default enhance(EventView)

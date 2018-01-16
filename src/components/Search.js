@@ -12,7 +12,7 @@ const Input = styled.input`
   background: #ffffff;
   border: none;
   border-bottom: 2px solid #555;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   transition: 1s cubic-bezier(0.22, 0.61, 0.36, 1) all;
 
   color: #333;

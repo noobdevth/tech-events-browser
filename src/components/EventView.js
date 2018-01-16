@@ -18,7 +18,7 @@ const Card = styled.div`
   color: #555;
   background: hsla(0, 0%, 100%, 0.9);
   border-radius: 6px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 
   width: 100%;
   margin-top: 1em;
@@ -46,7 +46,7 @@ const Title = styled.h2`
 
   border-radius: 6px 6px 0px 0px;
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 
   color: #555;
   font-weight: 300;

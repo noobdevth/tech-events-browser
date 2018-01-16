@@ -9,7 +9,7 @@ import EventCard from '../components/EventCard'
 import eventsSelector from '../ducks/events.selector'
 
 const Backdrop = styled.div`
-  background: #fafafa;
+  background: #fbfcff;
   min-height: 100vh;
 `
 

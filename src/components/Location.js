@@ -15,8 +15,15 @@ const Container = styled.div`
 `
 
 const Detail = styled.div`
-  color: #666;
+  color: #777;
   font-size: 0.85em;
+  line-height: 18px;
+`
+
+const Place = styled.div`
+  @media screen and (min-width: 600px) {
+    display: flex;
+  }
 `
 
 const Link = styled.a`
@@ -24,20 +31,15 @@ const Link = styled.a`
   text-decoration: none;
 `
 
-const Place = ({url, title}) =>
-  url ? (
-    <Link href={url} target="_blank" rel="noopener noreferrer">
-      {title}
-    </Link>
-  ) : (
-    <span>{title}</span>
-  )
-
-const Location = ({data: {title, url, detail}}) => (
+const Location = ({data: {title = 'Unknown Place', url = '#!', detail}}) => (
   <Container>
     <Icon i="mapPin" left />
-    <Place title={title} url={url} />&nbsp;
-    <Detail>{detail && <Markdown source={`(${detail})`} />}</Detail>
+    <Place>
+      <Link href={url} target="_blank" rel="noopener noreferrer">
+        {title}&nbsp;
+      </Link>
+      <Detail>{detail && <Markdown source={`(${detail})`} />}</Detail>
+    </Place>
   </Container>
 )
 

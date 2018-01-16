@@ -30,7 +30,7 @@ const Card = styled.div`
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 
   width: 100%;
-  margin-top: 1em;
+  margin-bottom: 1em;
 
   @media screen and (max-width: 800px) {
     flex-basis: 100%;

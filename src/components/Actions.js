@@ -47,33 +47,10 @@ const Link = props => (
   <Action target="_blank" rel="noopener noreferrer" {...props} />
 )
 
-const Actions = ({data}) => (
-  <Footer>
-    {data.map(({type, url, title, detail, price}) => {
-      switch (type) {
-        case 'rsvp':
-          return (
-            <Link key={url} href={url}>
-              <span>RSVP: {title}</span>
-              {detail && <span>: {detail}</span>}
-            </Link>
-          )
-        case 'ticket':
-          return (
-            <Link key={url} href={url}>
-              <span>Get Ticket: {title}</span>
-              {price && <span>&nbsp;- {price}</span>}
-            </Link>
-          )
-      }
+// rsvp: url, title, detail?
+// ticket: url, ticket, price?
+// website: url, title
 
-      return (
-        <Link key={url} href={url}>
-          Website: {title}
-        </Link>
-      )
-    })}
-  </Footer>
-)
+const Actions = ({data}) => <div />
 
 export default Actions

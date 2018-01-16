@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 
+import Icon from './Icon'
 import Markdown from './Markdown'
 
 const Container = styled.div`
@@ -11,6 +12,11 @@ const Container = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
+`
+
+const Detail = styled.div`
+  color: #666;
+  font-size: 0.85em;
 `
 
 const Link = styled.a`
@@ -29,9 +35,9 @@ const Place = ({url, title}) =>
 
 const Location = ({data: {title, url, detail}}) => (
   <Container>
-    <span>Location:&nbsp;</span>
+    <Icon i="mapPin" left />
     <Place title={title} url={url} />&nbsp;
-    {detail && <Markdown source={`(${detail})`} />}
+    <Detail>{detail && <Markdown source={`(${detail})`} />}</Detail>
   </Container>
 )
 

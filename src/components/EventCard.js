@@ -12,6 +12,8 @@ import Location from './Location'
 import Favorite from './Favorite'
 import TimeTable from './TimeTable'
 
+import {truncate, quote} from '../core/util'
+
 const CardLink = styled(Link)`
   text-decoration: none;
 `
@@ -79,8 +81,6 @@ const Inline = styled.div`
 
 // <small>ID: {id}</small>
 
-const quote = text => `“${text.trim()}”`
-
 const EventCard = ({data, favorite}) => {
   const {
     id,
@@ -105,12 +105,11 @@ const EventCard = ({data, favorite}) => {
       <Container>
         {summary && (
           <Summary>
-            <Markdown source={quote(summary)} />
+            <Markdown source={quote(truncate(summary, 160))} />
           </Summary>
         )}
         <DateView start={start} end={end} />
         <Location data={location} />
-        <TimeTable data={time} />
         <Inline>
           <Tags data={topics} color="#8e44ad" />
           <Tags data={categories} color="#3498db" />

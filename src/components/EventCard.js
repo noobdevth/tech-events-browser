@@ -1,5 +1,8 @@
 import React from 'react'
+import {Link} from 'react-static'
 import styled from 'react-emotion'
+
+import Card from './Card'
 
 import Tags from './Tags'
 import DateView from './Date'
@@ -9,23 +12,10 @@ import Location from './Location'
 import Favorite from './Favorite'
 import TimeTable from './TimeTable'
 
-const Card = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  flex: 0 1 100%;
+import {truncate, quote} from '../core/util'
 
-  color: #555;
-  background: hsla(0, 0%, 100%, 0.9);
-  border-radius: 6px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
-
-  width: 100%;
-  margin-top: 1em;
-
-  @media screen and (max-width: 800px) {
-    flex-basis: 100%;
-  }
+const CardLink = styled(Link)`
+  text-decoration: none;
 `
 
 // id: String
@@ -58,22 +48,11 @@ const Title = styled.h2`
 const Summary = styled.article`
   padding: 0 0.78em 0.5em 0.78em;
 
-  color: #555;
-  font-weight: 400;
-  line-height: 1.5em;
-  font-size: 1em;
-
-  word-wrap: break-word;
-`
-
-const Desc = styled.article`
-  margin-bottom: 0.8em;
-
   color: #666;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 0.9em;
-  white-space: pre-line;
+  font-size: 1em;
+
   word-wrap: break-word;
 `
 
@@ -90,8 +69,6 @@ const Inline = styled.div`
 `
 
 // <small>ID: {id}</small>
-
-const quote = text => `“${text.trim()}”`
 
 const EventCard = ({data, favorite}) => {
   const {
@@ -111,16 +88,15 @@ const EventCard = ({data, favorite}) => {
 
   return (
     <Card>
-      <Title>{title}</Title>
+      <CardLink to={`/event/${id}`}>
+        <Title>{title}</Title>
+      </CardLink>
       <Container>
-        {summary && (
-          <Summary>
-            <Markdown source={quote(summary)} />
-          </Summary>
-        )}
+        <Summary>
+          <Markdown source={quote(truncate(summary || description, 180))} />
+        </Summary>
         <DateView start={start} end={end} />
         <Location data={location} />
-        <TimeTable data={time} />
         <Inline>
           <Tags data={topics} color="#8e44ad" />
           <Tags data={categories} color="#3498db" />

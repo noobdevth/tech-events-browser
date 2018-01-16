@@ -48,6 +48,10 @@ export default {
       component: 'src/routes/index',
     },
     {
+      path: '/event',
+      component: 'src/routes/event',
+    },
+    {
       is404: true,
       component: 'src/routes/404',
     },

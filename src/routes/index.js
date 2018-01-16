@@ -8,11 +8,6 @@ import EventCard from '../components/EventCard'
 
 import eventsSelector from '../ducks/events.selector'
 
-const Backdrop = styled.div`
-  background: #fbfcff;
-  min-height: 100vh;
-`
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,13 +42,11 @@ const List = styled.div`
 `
 
 const Landing = ({events}) => (
-  <Backdrop>
-    <Container>
-      <List>
-        {events.map(event => <EventCard key={event.id} data={event} />)}
-      </List>
-    </Container>
-  </Backdrop>
+  <Container>
+    <List>
+      {events.map(event => <EventCard key={event.id} data={event} />)}
+    </List>
+  </Container>
 )
 
 const mapStateToProps = state => ({

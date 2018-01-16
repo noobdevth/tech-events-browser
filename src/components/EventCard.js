@@ -1,5 +1,8 @@
 import React from 'react'
+import {Link} from 'react-static'
 import styled from 'react-emotion'
+
+import Card from './Card'
 
 import Tags from './Tags'
 import DateView from './Date'
@@ -9,23 +12,8 @@ import Location from './Location'
 import Favorite from './Favorite'
 import TimeTable from './TimeTable'
 
-const Card = styled.div`
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  flex: 0 1 100%;
-
-  color: #555;
-  background: hsla(0, 0%, 100%, 0.9);
-  border-radius: 6px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
-
-  width: 100%;
-  margin-top: 1em;
-
-  @media screen and (max-width: 800px) {
-    flex-basis: 100%;
-  }
+const CardLink = styled(Link)`
+  text-decoration: none;
 `
 
 // id: String
@@ -111,7 +99,9 @@ const EventCard = ({data, favorite}) => {
 
   return (
     <Card>
-      <Title>{title}</Title>
+      <CardLink to={`/event/${id}`}>
+        <Title>{title}</Title>
+      </CardLink>
       <Container>
         {summary && (
           <Summary>

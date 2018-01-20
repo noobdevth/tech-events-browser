@@ -3,16 +3,10 @@ import {Link} from 'react-static'
 import styled from 'react-emotion'
 
 import Card from './Card'
-
 import Tags from './Tags'
 import DateView from './Date'
-import Actions from './Actions'
-import Markdown from './Markdown'
 import Location from './Location'
-import Favorite from './Favorite'
-import TimeTable from './TimeTable'
-
-import {truncate, quote} from '../core/util'
+import Truncate from './Truncate'
 
 const CardLink = styled(Link)`
   text-decoration: none;
@@ -32,17 +26,17 @@ const CardLink = styled(Link)`
 
 const Title = styled.h2`
   margin: 0;
-  padding: 0.28em 0.6em;
-
+  padding: 0.5em 1.4em;
   border-radius: 6px 6px 0px 0px;
+
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 
   color: #555;
-  font-weight: 300;
-  font-size: 1.3em;
+  font-weight: 400;
+  font-size: 1.08em;
   line-height: 1.45em;
-  text-align: center;
+  text-align: left;
 `
 
 const Summary = styled.article`
@@ -93,7 +87,7 @@ const EventCard = ({data, favorite}) => {
       </CardLink>
       <Container>
         <Summary>
-          <Markdown source={quote(truncate(summary || description, 180))} />
+          <Truncate text={summary || description} len={180} />
         </Summary>
         <DateView start={start} end={end} />
         <Location data={location} />

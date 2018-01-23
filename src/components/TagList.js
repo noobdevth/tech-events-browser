@@ -3,7 +3,6 @@ import styled from 'react-emotion'
 import {connect} from 'react-redux'
 
 import Tags from '../components/Tags'
-import FavToggle from '../components/FavToggle'
 
 const TagsContainer = styled.div`
   display: flex;
@@ -30,7 +29,6 @@ const TagList = ({events}) => (
   <TagsContainer>
     <Tags data={topicTags(events)} color="#8e44ad" />
     <Tags data={categoryTags(events)} color="#3498db" />
-    <FavToggle />
   </TagsContainer>
 )
 

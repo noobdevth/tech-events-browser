@@ -16,7 +16,7 @@ export const Fav = styled.button`
   padding: 0.28em 0.6em;
 
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 
   color: ${props => (props.active ? '#ff7474' : '#555')};
   border-bottom: 1px solid

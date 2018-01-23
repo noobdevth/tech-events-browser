@@ -1,43 +1,33 @@
 import React from 'react'
 import styled from 'react-emotion'
+import fecha from 'fecha'
+
+import Icon from './Icon'
 
 const Box = styled.div`
   display: flex;
 
   margin-bottom: 0.6em;
-`
-
-const DateBox = styled.div`
   font-weight: 300;
 `
 
-export const Date = ({date, month, year}) => (
-  <DateBox>
-    {date}/{month}/{year}
-  </DateBox>
-)
+function asDate({date, month, year}) {
+  return fecha.format(new Date(year, month - 1, date), 'MMMM Do, YYYY')
+}
 
+// If the event is a one-day event
 const isOneDay = (start, end) =>
   start.date === end.date &&
   start.month === end.month &&
   start.year === end.year
 
-const DateView = ({start, end}) => {
-  if (isOneDay(start, end)) {
-    return (
-      <Box>
-        <span>Date: </span>
-        &nbsp;<Date {...start} />
-      </Box>
-    )
-  }
+const DateView = ({start, end}) => (
+  <Box>
+    <Icon i="calendar" left />
+    {asDate(start)}
 
-  return (
-    <Box>
-      <span>Date: </span>
-      &nbsp;<Date {...start} />&nbsp;until&nbsp;<Date {...end} />
-    </Box>
-  )
-}
+    {!isOneDay(start, end) && <span>&nbsp;until&nbsp;{asDate(end)}</span>}
+  </Box>
+)
 
 export default DateView

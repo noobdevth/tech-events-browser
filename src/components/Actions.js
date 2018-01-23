@@ -27,8 +27,7 @@ const Action = styled.a`
   padding: 0.5em 0.8em;
 
   background: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 5px 0px,
-    rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 
   &:hover {
@@ -48,33 +47,10 @@ const Link = props => (
   <Action target="_blank" rel="noopener noreferrer" {...props} />
 )
 
-const Actions = ({data}) => (
-  <Footer>
-    {data.map(({type, url, title, detail, price}) => {
-      switch (type) {
-        case 'rsvp':
-          return (
-            <Link key={url} href={url}>
-              <span>RSVP: {title}</span>
-              {detail && <span>: {detail}</span>}
-            </Link>
-          )
-        case 'ticket':
-          return (
-            <Link key={url} href={url}>
-              <span>Get Ticket: {title}</span>
-              {price && <span>&nbsp;- {price}</span>}
-            </Link>
-          )
-      }
+// rsvp: url, title, detail?
+// ticket: url, ticket, price?
+// website: url, title
 
-      return (
-        <Link key={url} href={url}>
-          Website: {title}
-        </Link>
-      )
-    })}
-  </Footer>
-)
+const Actions = ({data}) => <div />
 
 export default Actions

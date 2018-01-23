@@ -7,7 +7,7 @@ import Markdown from './Markdown'
 const Container = styled.div`
   display: flex;
   align-items: center;
-
+  margin-bottom: 0.6em;
   @media screen and (max-width: 800px) {
     flex-direction: row;
     flex-wrap: wrap;

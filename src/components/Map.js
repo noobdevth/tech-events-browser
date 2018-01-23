@@ -7,12 +7,16 @@ const IFrame = styled.iframe`
   border: none;
 `
 
+const extractLocation = (url = '') =>
+  url.split('/@')[0].split('/maps/place/')[1]
+
 const Map = props => {
-  const {url, title} = props
+  const {url} = props
   return (
     <div>
       <IFrame
-        src={`//www.google.com/maps/embed/v1/place?q=${url}+${title}&zoom=17&key=
+        src={`//www.google.com/maps/embed/v1/place?q=
+        ${extractLocation(url)}&zoom=17&key=
         ${process.env.GOOGLE_MAPS_API_KEY}`}
       />
     </div>

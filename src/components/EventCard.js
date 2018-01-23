@@ -11,6 +11,7 @@ import Markdown from './Markdown'
 import Location from './Location'
 import Favorite from './Favorite'
 import TimeTable from './TimeTable'
+import Map from './Map'
 
 import {truncate, quote} from '../core/util'
 
@@ -85,7 +86,6 @@ const EventCard = ({data, favorite}) => {
     links,
     declared,
   } = data
-
   return (
     <Card>
       <CardLink to={`/event/${id}`}>
@@ -97,6 +97,7 @@ const EventCard = ({data, favorite}) => {
         </Summary>
         <DateView start={start} end={end} />
         <Location data={location} />
+        {location.url && <Map url={location.url} />}
         <Inline>
           <Tags data={topics} color="#8e44ad" />
           <Tags data={categories} color="#3498db" />

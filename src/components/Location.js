@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'react-emotion'
 
 import Markdown from './Markdown'
+import Map from './Map'
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-
+  margin-bottom: 0.6em;
   @media screen and (max-width: 800px) {
     flex-direction: row;
     flex-wrap: wrap;
@@ -27,12 +28,18 @@ const Place = ({url, title}) =>
     <span>{title}</span>
   )
 
+const extractLatLng = url =>
+  url.split('/@')[0].split('https://www.google.com/maps/place/')[1]
+
 const Location = ({data: {title, url, detail}}) => (
-  <Container>
-    <span>Location:&nbsp;</span>
-    <Place title={title} url={url} />&nbsp;
-    {detail && <Markdown source={`(${detail})`} />}
-  </Container>
+  <div>
+    <Container>
+      <span>Location:&nbsp;</span>
+      <Place title={title} url={url} />&nbsp;
+      {detail && <Markdown source={`(${detail})`} />}
+    </Container>
+    {url && <Map url={extractLatLng(url)} title={title} />}
+  </div>
 )
 
 export default Location

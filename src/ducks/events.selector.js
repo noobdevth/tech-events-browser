@@ -1,6 +1,8 @@
 import {createSelector} from 'reselect'
 import Fuse from 'fuse.js'
 
+import { dateParser } from '../core/util'
+
 const searchOptions = {
   shouldSort: true,
   keys: [
@@ -50,6 +52,27 @@ function filterByFavorites(events, isFavOnly, favorites) {
   return events
 }
 
+function splitEvents(events) {
+  const startOfToday = new Date()
+  startOfToday.setHours(0, 0, 0, 0)
+  const upcomingEvents = events
+    .filter(event => dateParser(event.start) - startOfToday >= 0)
+    .sort((a, b) => {
+      const aDate = dateParser(a.start)
+      const bDate = dateParser(b.start)
+      if (aDate - bDate > 0) return 1
+      else if (aDate - bDate < 0) return -1
+      return 0
+    })
+  const pastEvents = events.filter(
+    event => dateParser(event.start) - startOfToday < 0,
+  )
+  return {
+    pastEvents,
+    upcomingEvents,
+  }
+}
+
 const eventsSelector = createSelector(
   state => state.app.events,
   state => state.app.search,
@@ -60,7 +83,7 @@ const eventsSelector = createSelector(
     events = filterByTags(events, tagFilters)
     events = filterBySearch(events, query)
     events = filterByFavorites(events, isFavOnly, favs)
-
+    events = splitEvents(events)
     return events
   },
 )
